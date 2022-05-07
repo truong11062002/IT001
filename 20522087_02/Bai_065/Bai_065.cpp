@@ -1,0 +1,25 @@
+#include<iostream>
+#include<cmath>
+using namespace std;
+int LonNhat(int);
+int main()
+{
+	int n;
+	cout << "Nhap n: ";
+	cin >> n;
+	int kq = LonNhat(n);
+	cout << "Chu so nho nhat la: " << kq;
+	return 1;
+}
+int LonNhat(int k)
+{
+	k = abs(k);
+	int lc = 9;
+	for (int t = k; t != 0; t = t / 10)
+	{
+		int dv = t % 10;
+		if (dv < lc)
+			lc = dv;
+	}
+	return lc;
+}
